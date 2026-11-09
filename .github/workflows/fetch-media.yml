@@ -19,6 +19,7 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg imagemagick >/dev/null
           cd public/media
+          ffmpeg -y -loglevel error -ss 7 -i hero.mp4 -frames:v 1 -vf "scale='min(1600,iw)':-2" -q:v 3 studio.jpg
           ffmpeg -y -loglevel error -i hero.mp4 -an -vf "scale='min(1280,iw)':-2" -c:v libx264 -preset slow -crf 30 -movflags +faststart hero.small.mp4
           mv hero.small.mp4 hero.mp4
           for f in *.jpg services/*.jpg; do convert "$f" -resize '1600x1600>' -strip -interlace Plane -quality 78 "$f"; done

@@ -7,8 +7,8 @@ export const site = {
   logo: '/media/logo.png',
   heroImage: '/media/hero.jpg',
   heroVideo: '/media/hero.mp4',
-  aerialImage: '/media/aerial.jpg',
-  leedsImage: '/media/leeds.jpg',
+  aerialImage: '/media/leeds.jpg',
+  studioImage: '/media/studio.jpg',
 };
 
 export const contact = {

@@ -10,7 +10,7 @@ export default function Aerial() {
           <div className="aspect-[4/3] overflow-hidden rounded-[28px] bg-ink-soft">
             <img
               src={site.aerialImage}
-              alt="A designer flying a drone to capture aerial visual content"
+              alt="Aerial view of the Leeds skyline at dusk"
               loading="lazy"
               decoding="async"
               className="h-full w-full object-cover"
