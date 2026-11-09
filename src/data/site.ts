@@ -91,10 +91,10 @@ export const services: {
 ];
 
 export const processSteps = [
-  { n: '01', title: 'Brief', text: 'A short call or email about your brand, audience and deadline. We agree scope, budget and timing before anything is drawn.' },
-  { n: '02', title: 'Concepts', text: 'Moodboards, sketches and type ideas. You see two or three directions and we talk through what each is trying to say.' },
-  { n: '03', title: 'Design', text: 'The chosen direction is built out properly across every social, digital and print format you need.' },
-  { n: '04', title: 'Proof & handover', text: 'Proofs are signed off, then print-ready and digital files arrive with a short brand guide to keep things consistent.' },
+  { n: '01', title: 'Brief', text: 'A short call or email about your brand, audience and deadline. We agree scope, budget and timing before anything is drawn.', result: 'Clear scope and quote' },
+  { n: '02', title: 'Concepts', text: 'Moodboards, sketches and type ideas. You see two or three directions and we talk through what each is trying to say.', result: '2 to 3 creative directions' },
+  { n: '03', title: 'Design', text: 'The chosen direction is built out properly across every social, digital and print format you need.', result: 'Every format you need' },
+  { n: '04', title: 'Proof & handover', text: 'Proofs are signed off, then print-ready and digital files arrive with a short brand guide to keep things consistent.', result: 'Final files and brand guide' },
 ];
 
 export const stats = [
