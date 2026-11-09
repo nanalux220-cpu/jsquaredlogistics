@@ -20,7 +20,7 @@ export default function OperatingArea() {
             href="#contact"
             className="mt-8 inline-flex cursor-pointer items-center gap-2 bg-accent-500 px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-background-50 transition-colors hover:bg-accent-600"
           >
-            Contacts us <i className="ri-arrow-right-line"></i>
+            Contact us <i className="ri-arrow-right-line"></i>
           </a>
         </div>
       </div>

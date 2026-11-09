@@ -8,6 +8,8 @@ import OperatingArea from './components/OperatingArea';
 import AboutStudio from './components/AboutStudio';
 import Process from './components/Process';
 import Contact from './components/Contact';
+import Highlights from './components/Highlights';
+import Faq from './components/Faq';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -18,11 +20,13 @@ export default function Home() {
       <Nav />
       <main>
         <Chapter />
+        <Highlights />
         <Pillars />
         <Featured />
         <OperatingArea />
         <AboutStudio />
         <Process />
+        <Faq />
         <Contact />
       </main>
       <Footer />

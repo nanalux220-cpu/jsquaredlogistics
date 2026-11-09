@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from 'react';
 import { contactInfo, socials } from '@/mocks/home';
 
-const SUBMIT = 'https://readdy.ai/api/form/dboq8tph8nnlcb0mjv90';
+// The form endpoint can be swapped in Vercel (VITE_FORM_ENDPOINT) without touching the code.
+const SUBMIT = import.meta.env.VITE_FORM_ENDPOINT || 'https://readdy.ai/api/form/dboq8tph8nnlcb0mjv90';
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle');
@@ -45,11 +46,11 @@ export default function Contact() {
         form.reset();
         setCount(0);
       } else {
-        setFormError(serverMsg || 'Something went wrong. Please try again.');
+        setFormError(serverMsg || `Something went wrong. Please try again, or email ${contactInfo.email}.`);
         setStatus('error');
       }
     } catch {
-      setFormError('Network error — please try again in a moment.');
+      setFormError(`Network error. Please try again in a moment, or email ${contactInfo.email}.`);
       setStatus('error');
     }
   };
@@ -102,7 +103,7 @@ export default function Contact() {
             </div>
           </dl>
 
-          <div className="mt-9 flex items-center gap-3">
+          {socials.length > 0 && <div className="mt-9 flex items-center gap-3">
             {socials.map((s) => (
               <a
                 key={s.label}
@@ -115,7 +116,7 @@ export default function Contact() {
                 <i className={s.icon}></i>
               </a>
             ))}
-          </div>
+          </div>}
         </div>
 
         <form id="quote-form" className="form-card" data-readdy-form onSubmit={onSubmit} noValidate data-reveal>
@@ -143,6 +144,7 @@ export default function Contact() {
                 <option>Digital Design</option>
                 <option>Infographics</option>
                 <option>UI/UX Design</option>
+                <option>Packaging Design</option>
                 <option>Not sure yet</option>
               </select>
             </div>

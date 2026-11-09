@@ -96,22 +96,58 @@ export const studio = {
 };
 
 export const contactInfo = {
-  address: ['83 Roseville Road,', 'Leeds – safestore', 'LS85DT'],
+  address: ['83 Roseville Road,', 'Leeds – safestore', 'LS8 5DT'],
   phone: '+44-7427259935',
   phoneHref: '+447427259935',
   email: 'admin@jsquaredlogistics.co.uk',
 };
 
-export const socials = [
-  { label: 'Facebook', icon: 'ri-facebook-fill', href: 'https://www.facebook.com/' },
-  { label: 'Twitter', icon: 'ri-twitter-x-fill', href: 'https://twitter.com/' },
-  { label: 'YouTube', icon: 'ri-youtube-fill', href: 'https://www.youtube.com/' },
+// Paste the studio's real profile links here. A button only shows once its link is filled in.
+const allSocials = [
+  { label: 'Facebook', icon: 'ri-facebook-fill', href: '' },
+  { label: 'X (Twitter)', icon: 'ri-twitter-x-fill', href: '' },
+  { label: 'Instagram', icon: 'ri-instagram-line', href: '' },
+  { label: 'YouTube', icon: 'ri-youtube-fill', href: '' },
 ];
+export const socials = allSocials.filter((s) => s.href);
 
 export const navLinks = [
   { href: '#overview', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
+  { href: '#featured', label: 'Work' },
+  { href: '#process', label: 'Process' },
+  { href: '#faq', label: 'FAQ' },
+];
+
+export const highlights = [
+  { value: '6', label: 'Core design services' },
+  { value: '4', label: 'Steps from brief to handover' },
+  { value: '1 day', label: 'Typical reply to enquiries' },
+  { value: 'Leeds', label: 'Based here, working worldwide' },
+];
+
+export const faqs = [
+  {
+    q: 'Do you only work with businesses in Leeds?',
+    a: 'No. The studio is based in Leeds and we meet local clients in person, but most projects run online, so we work with clients anywhere. For in-person work beyond a 20 mile radius of Leeds, travel costs may apply.',
+  },
+  {
+    q: 'What do I need to get started?',
+    a: 'Just a short description of your business, who you want to reach and when you need the work. Send it through the form below and we will come back with questions, timings and a clear quote.',
+  },
+  {
+    q: 'How many design options will I see?',
+    a: 'At the concept stage you see two or three directions. Once you pick one, we refine it across every format you need before anything is signed off.',
+  },
+  {
+    q: 'Which files do I get at the end?',
+    a: 'Print-ready files for your printer, web-ready files for screens and social, and a short brand guide so your colours, type and logo stay consistent wherever they are used.',
+  },
+  {
+    q: 'Can you combine several services into one project?',
+    a: 'Yes. Many clients start with a brand identity and then roll it out to print, social and packaging. Doing it together keeps everything looking like one brand and is usually quicker.',
+  },
 ];
 
 export const processSteps = [
