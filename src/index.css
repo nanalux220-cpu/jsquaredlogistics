@@ -55,6 +55,15 @@
 .cine-spin-rev { animation: cine-spin 120s linear infinite reverse; }
 .cine-fade { opacity: 0; animation: cine-fade 1.4s 1.6s ease forwards; }
 .cine-scroll { animation: cine-scroll 1.8s ease-in-out infinite; }
+.cine-loop { stroke-dasharray: 3200; stroke-dashoffset: 3200; animation: cine-loop 9s cubic-bezier(.6,.1,.2,1) infinite; }
+.cine-loop-2 { animation-delay: 2.5s; animation-duration: 11s; }
+.cine-pop { opacity: 0; animation: cine-pop 9s ease infinite; }
+.cine-float { animation: cine-float 7s ease-in-out infinite; }
+.cine-float-2 { animation-duration: 8.5s; animation-delay: -3s; }
+.cine-float-3 { animation-duration: 6s; animation-delay: -1.5s; }
+.cine-bar { animation: cine-bar 4s ease-in-out infinite alternate; transform-origin: left; }
+.cine-cursor { animation: cine-cursor 14s ease-in-out infinite; }
+.cine-sweep { animation: cine-sweep 8s ease-in-out infinite; }
 
 @keyframes cine-grain {
   0% { transform: translate(0, 0); } 20% { transform: translate(-5%, 3%); } 40% { transform: translate(4%, -4%); }
@@ -65,10 +74,22 @@
 @keyframes cine-spin { to { transform: rotate(360deg); } }
 @keyframes cine-draw { to { stroke-dashoffset: 0; } }
 @keyframes cine-fade { to { opacity: 1; } }
+@keyframes cine-loop { 0% { stroke-dashoffset: 3200; opacity: 1; } 45% { stroke-dashoffset: 0; } 80% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes cine-pop { 0%, 30% { opacity: 0; transform: scale(.4); } 38%, 82% { opacity: 1; transform: scale(1); } 100% { opacity: 0; } }
+@keyframes cine-float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(-1.2deg); } }
+@keyframes cine-bar { from { transform: scaleX(.35); } to { transform: scaleX(1.4); } }
+@keyframes cine-cursor {
+  0% { transform: translate(55vw, 70vh); } 25% { transform: translate(82vw, 38vh); } 50% { transform: translate(66vw, 22vh); }
+  75% { transform: translate(88vw, 62vh); } 100% { transform: translate(55vw, 70vh); }
+}
+@keyframes cine-sweep { 0% { transform: translateX(0) skewX(-20deg); } 60%, 100% { transform: translateX(400%) skewX(-20deg); } }
 @keyframes cine-scroll { 0%, 100% { transform: translateY(0); opacity: 1; } 60% { transform: translateY(12px); opacity: .2; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .cine-grain, .cine-kenburns, .cine-glow, .cine-glow-slow, .cine-spin, .cine-spin-rev, .cine-scroll { animation: none; }
+  .cine-grain, .cine-kenburns, .cine-glow, .cine-glow-slow, .cine-spin, .cine-spin-rev, .cine-scroll, .cine-float, .cine-bar, .cine-cursor, .cine-sweep { animation: none; }
+  .cine-loop { animation: none; stroke-dashoffset: 0; }
+  .cine-pop { animation: none; opacity: 1; }
+  .cine-cursor { display: none; }
   .cine-draw { animation: none; stroke-dashoffset: 0; }
   .cine-fade { animation: none; opacity: 1; }
 }

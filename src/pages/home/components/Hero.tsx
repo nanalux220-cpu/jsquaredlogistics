@@ -9,7 +9,7 @@ export default function Hero() {
       <HeroBackdrop />
 
       <div className="container-site relative flex flex-1 flex-col justify-center py-16 md:py-24">
-        <p className="eyebrow [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]" data-reveal>{site.tagline}</p>
+        <p className="eyebrow !text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]" data-reveal>{site.tagline}</p>
         <h1
           className="mt-6 max-w-[13ch] text-[clamp(44px,7.4vw,108px)] font-bold leading-[0.95] tracking-[-0.045em] [text-shadow:0_10px_40px_rgba(0,0,0,0.45)]"
           data-reveal
