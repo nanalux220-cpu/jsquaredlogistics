@@ -7,7 +7,7 @@ export const site = {
   logo: '/media/logo.png',
   heroImage: '/media/hero.webp',
   heroImageSmall: '/media/hero-800.webp',
-  heroVideo: '/media/hero.mp4',
+  heroImageMobile: '/media/hero-mobile.webp',
   studioImage: '/media/studio.webp',
 };
 
