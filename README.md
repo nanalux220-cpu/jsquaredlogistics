@@ -1,6 +1,6 @@
 # Jsquaredlogistics website
 
-One-page site for the Leeds graphic design studio, built with React, Vite and Tailwind.
+One-page site for the Leeds graphic design studio, built with React, Vite, Tailwind and Lucide icons.
 
 ## Run it locally
 
@@ -36,7 +36,7 @@ If you use a domain other than `jsquaredlogistics.co.uk`, update it in `index.ht
 
 ## Editing content
 
-Most text, services, FAQs, contact details and social links live in `src/mocks/home.ts`.
+All text, services, FAQs, images, contact details and social links live in `src/data/site.ts`.
 Social buttons only appear once their link is filled in.
 
 ## Contact form

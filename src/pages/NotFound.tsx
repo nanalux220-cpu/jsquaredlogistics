@@ -1,18 +1,15 @@
-import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
-  const location = useLocation();
-  
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen text-center px-4">
-      <h1 className="absolute bottom-0 text-9xl md:text-[12rem] font-black text-gray-50 select-none pointer-events-none z-0">
-        404
-      </h1>
-      <div className="relative z-10">
-        <h1 className="text-xl md:text-2xl font-semibold mt-6">This page has not been generated</h1>
-        <p className="mt-2 text-base text-gray-400 font-mono">{location.pathname}</p>
-        <p className="mt-4 text-lg md:text-xl text-gray-500">Tell me more about this page, so I can generate it</p>
-      </div>
-    </div>
+    <main className="flex min-h-svh flex-col items-center justify-center px-5 text-center">
+      <p className="font-display text-[clamp(96px,18vw,180px)] font-bold leading-none tracking-[-0.06em] text-brand">404</p>
+      <h1 className="mt-4 text-[clamp(24px,3vw,34px)] font-bold tracking-[-0.03em]">This page doesn't exist.</h1>
+      <p className="mt-3 max-w-[40ch] text-ink-muted">The link may be old or mistyped. Head back to the homepage to find what you need.</p>
+      <Link to="/" className="btn-primary mt-8">
+        <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back to homepage
+      </Link>
+    </main>
   );
 }

@@ -1,31 +1,30 @@
-import useFilm from '@/hooks/useFilm';
-import usePanels from '@/hooks/usePanels';
-import Nav from './components/Nav';
-import Chapter from './components/Chapter';
-import Pillars from './components/Pillars';
-import Featured from './components/Featured';
-import OperatingArea from './components/OperatingArea';
-import AboutStudio from './components/AboutStudio';
+import useReveal from '@/hooks/useReveal';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Ticker from './components/Ticker';
+import Services from './components/Services';
+import Aerial from './components/Aerial';
 import Process from './components/Process';
-import Contact from './components/Contact';
-import Highlights from './components/Highlights';
+import About from './components/About';
 import Faq from './components/Faq';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function Home() {
-  useFilm();
-  usePanels();
+  useReveal();
   return (
     <>
-      <Nav />
-      <main>
-        <Chapter />
-        <Highlights />
-        <Pillars />
-        <Featured />
-        <OperatingArea />
-        <AboutStudio />
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-white">
+        Skip to content
+      </a>
+      <Header />
+      <main id="main">
+        <Hero />
+        <Ticker />
+        <Services />
+        <Aerial />
         <Process />
+        <About />
         <Faq />
         <Contact />
       </main>
