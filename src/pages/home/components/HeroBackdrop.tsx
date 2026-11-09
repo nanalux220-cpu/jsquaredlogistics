@@ -6,18 +6,39 @@ import { site } from '@/data/site';
 export default function HeroBackdrop() {
   const [videoOn, setVideoOn] = useState(false);
 
-  // Only stream the video for people who haven't asked for reduced motion or data saving.
+  // Stream the video only on tablet/desktop screens with a decent connection, after the page has loaded.
+  // Phones, data savers and reduced-motion users get the still image, which keeps mobile loading fast.
   useEffect(() => {
-    const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches || conn?.saveData) return;
-    setVideoOn(true);
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    if (
+      matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !matchMedia('(min-width: 768px)').matches ||
+      conn?.saveData ||
+      /(^|-)2g|3g/.test(conn?.effectiveType ?? '')
+    ) return undefined;
+    const start = () => setVideoOn(true);
+    if (document.readyState === 'complete') {
+      const t = setTimeout(start, 300);
+      return () => clearTimeout(t);
+    }
+    addEventListener('load', start, { once: true });
+    return () => removeEventListener('load', start);
   }, []);
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
       {/* Footage with a slow push-in */}
       <div className="cine-kenburns absolute inset-0 brightness-110 saturate-[1.15]">
-        <img src={site.heroImage} alt="" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+        <img
+          src={site.heroImage}
+          srcSet={`${site.heroImageSmall} 800w, ${site.heroImage} 1600w`}
+          sizes="100vw"
+          alt=""
+          width={1600}
+          height={904}
+          className="absolute inset-0 h-full w-full object-cover"
+          fetchPriority="high"
+        />
         {videoOn && (
           <video
             className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-1000"
