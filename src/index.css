@@ -40,3 +40,40 @@
   .animate-marquee { animation: none; }
   .faq-panel { transition: none; }
 }
+
+/* Cinematic hero backdrop */
+.cine-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.6) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%, 100% 120px;
+  mask-image: radial-gradient(ellipse at 70% 45%, #000 0%, transparent 75%);
+}
+.cine-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: cine-grain 1.2s steps(6) infinite;
+}
+.cine-kenburns { animation: cine-kenburns 28s ease-in-out infinite alternate; }
+.cine-glow { animation: cine-glow 9s ease-in-out infinite alternate; }
+.cine-glow-slow { animation: cine-glow 14s ease-in-out infinite alternate-reverse; }
+.cine-spin { animation: cine-spin 90s linear infinite; }
+.cine-draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: cine-draw 3.2s .6s cubic-bezier(.6,.1,.2,1) forwards; }
+.cine-fade { opacity: 0; animation: cine-fade 1.4s 1.6s ease forwards; }
+.cine-scroll { animation: cine-scroll 1.8s ease-in-out infinite; }
+
+@keyframes cine-grain {
+  0% { transform: translate(0, 0); } 20% { transform: translate(-5%, 3%); } 40% { transform: translate(4%, -4%); }
+  60% { transform: translate(-3%, -2%); } 80% { transform: translate(3%, 5%); } 100% { transform: translate(0, 0); }
+}
+@keyframes cine-kenburns { from { transform: scale(1.06) translate(0, 0); } to { transform: scale(1.18) translate(-2%, -1.5%); } }
+@keyframes cine-glow { from { opacity: .55; transform: translate(0, 0) scale(1); } to { opacity: 1; transform: translate(-6%, 4%) scale(1.15); } }
+@keyframes cine-spin { to { transform: rotate(360deg); } }
+@keyframes cine-draw { to { stroke-dashoffset: 0; } }
+@keyframes cine-fade { to { opacity: 1; } }
+@keyframes cine-scroll { 0%, 100% { transform: translateY(0); opacity: 1; } 60% { transform: translateY(12px); opacity: .2; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .cine-grain, .cine-kenburns, .cine-glow, .cine-glow-slow, .cine-spin, .cine-scroll { animation: none; }
+  .cine-draw { animation: none; stroke-dashoffset: 0; }
+  .cine-fade { animation: none; opacity: 1; }
+}
