@@ -15,6 +15,14 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/fetch-media.mjs
+      - name: Compress video and images
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg imagemagick >/dev/null
+          cd public/media
+          ffmpeg -y -loglevel error -i hero.mp4 -an -vf "scale='min(1280,iw)':-2" -c:v libx264 -preset slow -crf 30 -movflags +faststart hero.small.mp4
+          mv hero.small.mp4 hero.mp4
+          for f in *.jpg services/*.jpg; do convert "$f" -resize '1600x1600>' -strip -interlace Plane -quality 78 "$f"; done
+          ls -la . services
       - name: Commit media
         run: |
           git config user.name "github-actions[bot]"

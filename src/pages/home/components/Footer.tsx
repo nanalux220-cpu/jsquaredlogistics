@@ -58,7 +58,12 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-2 border-t border-white/10 pt-6 text-[13px] text-white/45 sm:flex-row sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Graphic design studio · Leeds, UK</p>
+          <p>
+            Website built by{' '}
+            <a href="https://creativedleading.co.uk" target="_blank" rel="noopener" className="font-medium text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline">
+              creativedleading.co.uk
+            </a>
+          </p>
         </div>
       </div>
     </footer>

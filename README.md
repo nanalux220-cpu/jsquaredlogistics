@@ -41,5 +41,15 @@ Social buttons only appear once their link is filled in.
 
 ## Contact form
 
-The form posts to the existing Readdy form endpoint. To use another form service (Formspree, Basin, etc.),
-add an environment variable `VITE_FORM_ENDPOINT` in Vercel (**Settings → Environment Variables**) and redeploy.
+Enquiries are emailed to `admin@jsquaredlogistics.co.uk` through [FormSubmit](https://formsubmit.co).
+The first enquiry sends an activation email to that inbox: click the link in it once, and every enquiry after that
+arrives as a normal email. To use another form service, add `VITE_FORM_ENDPOINT` in Vercel
+(**Settings → Environment Variables**) and redeploy.
+
+## Images and video
+
+All images, the logo and the hero video live in `public/media`, so the site does not depend on any other server.
+
+---
+
+Website built by [creativedleading.co.uk](https://creativedleading.co.uk).
