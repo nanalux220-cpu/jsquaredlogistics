@@ -21,7 +21,7 @@ export default function Services() {
           {services.map((s, i) => (
             <article
               key={s.title}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(21,23,26,0.35)]"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(37,41,47,0.35)]"
               data-reveal
               style={delay((i % 3) * 80)}
             >

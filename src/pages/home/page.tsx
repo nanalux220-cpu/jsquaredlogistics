@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Ticker from './components/Ticker';
 import Services from './components/Services';
-import Aerial from './components/Aerial';
 import Process from './components/Process';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -21,7 +20,6 @@ export default function Home() {
         <Hero />
         <Ticker />
         <Services />
-        <Aerial />
         <Process />
         <About />
         <Contact />
