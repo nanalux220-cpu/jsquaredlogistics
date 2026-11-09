@@ -27,7 +27,7 @@ export default function Process() {
 
         <ol className="relative mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {/* Line that links the steps on large screens */}
-          <span className="pointer-events-none absolute left-[12%] right-[12%] top-[52px] hidden h-px bg-gradient-to-r from-brand via-white/25 to-brand lg:block" aria-hidden="true"></span>
+          <span className="pointer-events-none absolute left-[12%] right-[12%] top-[58px] hidden h-px bg-gradient-to-r from-brand via-white/25 to-brand lg:block" aria-hidden="true"></span>
 
           {processSteps.map((s, i) => {
             const Icon = icons[i];
@@ -38,17 +38,11 @@ export default function Process() {
                 data-reveal
                 style={delay(i * 100)}
               >
-                <div className="flex items-center justify-between">
-                  <span className="relative flex h-[60px] w-[60px] items-center justify-center rounded-2xl bg-brand text-white shadow-[0_12px_30px_-10px_rgba(214,29,34,0.8)] transition-transform duration-300 group-hover:scale-105">
-                    <Icon className="h-7 w-7" strokeWidth={1.75} aria-hidden="true" />
-                  </span>
-                  <span className="font-display text-[52px] font-bold leading-none tracking-[-0.05em] text-white/10 transition-colors duration-300 group-hover:text-white/25">
-                    {s.n}
-                  </span>
-                </div>
+                <span className="flex h-[60px] w-[60px] items-center justify-center rounded-2xl bg-brand text-white shadow-[0_12px_30px_-10px_rgba(214,29,34,0.8)] transition-transform duration-300 group-hover:scale-105">
+                  <Icon className="h-7 w-7" strokeWidth={1.75} aria-hidden="true" />
+                </span>
 
-                <p className="mt-8 text-[12px] font-semibold uppercase tracking-[0.18em] text-brand">Step {s.n}</p>
-                <h3 className="mt-2 text-[23px] font-semibold tracking-[-0.02em]">{s.title}</h3>
+                <h3 className="mt-7 text-[23px] font-semibold tracking-[-0.02em]">{s.title}</h3>
                 <p className="mt-3 flex-1 text-[15px] leading-relaxed text-white/65">{s.text}</p>
 
                 <p className="mt-7 flex items-center gap-2.5 border-t border-white/10 pt-5 text-[14px] font-medium text-white/90">
