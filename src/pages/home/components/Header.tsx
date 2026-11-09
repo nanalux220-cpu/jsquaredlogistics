@@ -30,6 +30,8 @@ export default function Header() {
     };
   }, [open]);
 
+  const onDark = !scrolled && !open; // transparent over the dark hero
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -43,7 +45,7 @@ export default function Header() {
 
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="rounded-full px-4 py-2 text-[14px] font-medium text-ink-soft transition-colors hover:bg-ink/5 hover:text-ink">
+            <a key={l.href} href={l.href} className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${onDark ? 'text-white/80 hover:bg-white/10 hover:text-white' : 'text-ink-soft hover:bg-ink/5 hover:text-ink'}`}>
               {l.label}
             </a>
           ))}
@@ -55,7 +57,7 @@ export default function Header() {
           </a>
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-ink/5 lg:hidden"
+            className={`flex h-11 w-11 items-center justify-center rounded-full lg:hidden ${onDark ? 'text-white hover:bg-white/10' : 'text-ink hover:bg-ink/5'}`}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="mobile-menu"
