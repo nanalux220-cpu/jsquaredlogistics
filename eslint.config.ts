@@ -46,7 +46,7 @@ const autoImportGlobals = {
 }
 
 export default [
-  { ignores: ['dist', 'node_modules'] },
+  { ignores: ['dist', 'out', 'node_modules'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -60,10 +60,6 @@ export default [
         JSX: 'readonly',
         IdleRequestCallback: 'readonly',
         __BASE_PATH__: 'readonly',
-        __IS_PREVIEW__: 'readonly',
-        __READDY_PROJECT_ID__: 'readonly',
-        __READDY_VERSION_ID__: 'readonly',
-        __READDY_AI_DOMAIN__: 'readonly',
       },
     },
     plugins: {

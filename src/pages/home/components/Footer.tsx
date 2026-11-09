@@ -16,7 +16,7 @@ export default function Footer() {
               <Logo className="footer-logo" />
             </a>
             <p className="mt-6 max-w-[42ch] text-[14px] leading-relaxed text-foreground-600">{studio.footerBlurb}</p>
-            <div className="mt-7 flex items-center gap-3">
+            {socials.length > 0 && <div className="mt-7 flex items-center gap-3">
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -29,7 +29,7 @@ export default function Footer() {
                   <i className={s.icon}></i>
                 </a>
               ))}
-            </div>
+            </div>}
           </div>
 
           <div data-reveal>
@@ -60,6 +60,7 @@ export default function Footer() {
               <a className="hover:text-accent-500" href="#services">Services</a>
               <a className="hover:text-accent-500" href="#featured">Work</a>
               <a className="hover:text-accent-500" href="#process">Process</a>
+              <a className="hover:text-accent-500" href="#faq">FAQ</a>
               <a className="hover:text-accent-500" href="#contact">Contact</a>
             </nav>
           </div>
@@ -93,7 +94,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-foreground-950/10 pt-6 text-[12px] text-foreground-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>&copy; 2026 Jsquaredlogistics. All rights reserved.</span>
+          <span>&copy; {new Date().getFullYear()} Jsquaredlogistics. All rights reserved.</span>
           <span className="font-label uppercase tracking-[0.16em]">Leeds &middot; Clients worldwide</span>
         </div>
       </div>

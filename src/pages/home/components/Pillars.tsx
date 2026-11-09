@@ -15,7 +15,7 @@ export default function Pillars() {
               Three ways we make a brand <em className="accent">impossible</em> to ignore.
             </h2>
           </div>
-          <p className="max-w-[38ch] text-[15px] leading-relaxed text-foreground-700 md:pb-2" data-reveal>
+          <p className="max-w-[38ch] text-[15px] leading-relaxed text-foreground-200 md:pb-2" data-reveal>
             Design that carries across every screen, page and print run — drawn in Leeds, delivered wherever your
             audience happens to be.
           </p>
