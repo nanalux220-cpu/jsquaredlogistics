@@ -36,7 +36,7 @@ If you use a domain other than `jsquaredlogistics.co.uk`, update it in `index.ht
 
 ## Editing content
 
-All text, services, FAQs, images, contact details and social links live in `src/data/site.ts`.
+All text, services, images, contact details and social links live in `src/data/site.ts`.
 Social buttons only appear once their link is filled in.
 
 ## Contact form

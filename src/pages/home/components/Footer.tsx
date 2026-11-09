@@ -27,7 +27,7 @@ export default function Footer() {
           <nav aria-label="Footer">
             <h2 className="font-sans text-[13px] font-semibold uppercase tracking-[0.16em] text-white">Explore</h2>
             <ul className="mt-5 space-y-3 text-[15px]">
-              {[...navLinks, { href: '#contact', label: 'Contact' }].map((l) => (
+              {navLinks.map((l) => (
                 <li key={l.href}><a href={l.href} className="transition-colors hover:text-white">{l.label}</a></li>
               ))}
             </ul>

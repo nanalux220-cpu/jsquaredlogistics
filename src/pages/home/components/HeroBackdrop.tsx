@@ -35,12 +35,15 @@ export default function HeroBackdrop() {
       </div>
 
       {/* Colour grade: deep shadows, warm red highlights */}
-      <div className="absolute inset-0 bg-ink/70 mix-blend-multiply"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/60"></div>
+      {/* Even grade across the whole frame, so the footage shows edge to edge */}
+      <div className="absolute inset-0 bg-ink/45 mix-blend-multiply"></div>
+      <div className="absolute inset-0 bg-ink/35"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-ink/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/55"></div>
 
       {/* Light leaks */}
-      <div className="cine-glow absolute -right-[10%] top-[10%] h-[70vmin] w-[70vmin] rounded-full bg-brand/40 blur-[110px]"></div>
+      <div className="cine-glow absolute -right-[10%] top-[10%] h-[70vmin] w-[70vmin] rounded-full bg-brand/35 blur-[110px]"></div>
+      <div className="cine-glow-slow absolute -left-[10%] top-[-15%] h-[60vmin] w-[60vmin] rounded-full bg-brand/25 blur-[120px]"></div>
       <div className="cine-glow-slow absolute bottom-[-20%] left-[30%] h-[55vmin] w-[55vmin] rounded-full bg-[#ff7a3d]/20 blur-[120px]"></div>
 
       {/* Designer layout grid */}
@@ -48,6 +51,14 @@ export default function HeroBackdrop() {
 
       {/* Graphic design layer */}
       <svg className="absolute inset-0 h-full w-full opacity-50 md:opacity-100" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">
+        {/* Left-side construction guides */}
+        <g className="cine-spin-rev" style={{ transformOrigin: '210px 210px' }} stroke="rgba(255,255,255,0.14)">
+          <circle cx="210" cy="210" r="170" strokeDasharray="2 10" />
+          <circle cx="210" cy="210" r="110" />
+        </g>
+        <line x1="0" y1="210" x2="1440" y2="210" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 10" />
+        <line x1="0" y1="690" x2="1440" y2="690" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 10" />
+
         {/* Large construction circles */}
         <g className="cine-spin" style={{ transformOrigin: '1080px 430px' }} stroke="rgba(255,255,255,0.18)">
           <circle cx="1080" cy="430" r="300" strokeDasharray="2 10" />
@@ -58,7 +69,7 @@ export default function HeroBackdrop() {
         <circle cx="1080" cy="430" r="140" stroke="rgba(212,32,42,0.65)" strokeWidth="1.5" />
 
         {/* Pen-tool bezier curve with anchor points */}
-        <path className="cine-draw" d="M760 690 C 900 520, 1010 760, 1160 560 S 1360 380, 1420 300" stroke="#d4202a" strokeWidth="2" />
+        <path className="cine-draw" d="M20 820 C 300 640, 520 900, 760 690 S 1010 760, 1160 560 S 1360 380, 1420 300" stroke="#d4202a" strokeWidth="2" />
         <g className="cine-fade" stroke="#fff" strokeWidth="1">
           <line x1="900" y1="520" x2="760" y2="690" strokeOpacity="0.35" />
           <line x1="1010" y1="760" x2="1160" y2="560" strokeOpacity="0.35" />
@@ -69,7 +80,12 @@ export default function HeroBackdrop() {
           <circle cx="1010" cy="760" r="5" fill="#fff" />
         </g>
 
-        {/* Registration mark */}
+        {/* Registration marks */}
+        <g className="cine-fade" stroke="rgba(255,255,255,0.45)" transform="translate(80 120)">
+          <circle r="12" />
+          <line x1="-20" y1="0" x2="20" y2="0" />
+          <line x1="0" y1="-20" x2="0" y2="20" />
+        </g>
         <g className="cine-fade" stroke="rgba(255,255,255,0.55)" transform="translate(1320 140)">
           <circle r="16" />
           <circle r="7" />

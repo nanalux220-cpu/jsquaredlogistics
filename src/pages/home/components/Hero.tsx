@@ -17,7 +17,7 @@ export default function Hero() {
         >
           Design that makes your brand <span className="text-brand">impossible to ignore.</span>
         </h1>
-        <p className="mt-7 max-w-[50ch] text-[17px] leading-relaxed text-white/75 md:text-[19px]" data-reveal style={delay(160)}>
+        <p className="mt-7 max-w-[50ch] text-[17px] leading-relaxed text-white/85 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)] md:text-[19px]" data-reveal style={delay(160)}>
           Brand identity, print, digital, packaging and aerial visual content from a Leeds studio that cares about every detail, for clients in Leeds and worldwide.
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row" data-reveal style={delay(240)}>

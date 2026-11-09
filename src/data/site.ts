@@ -30,11 +30,11 @@ const allSocials = [
 export const socials = allSocials.filter((s) => s.href);
 
 export const navLinks = [
+  { href: '#top', label: 'Home' },
   { href: '#services', label: 'Services' },
   { href: '#aerial', label: 'Aerial' },
-  { href: '#process', label: 'Process' },
   { href: '#about', label: 'About' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export type ServiceIcon = 'brand' | 'print' | 'digital' | 'info' | 'uiux' | 'pack';
@@ -121,28 +121,5 @@ export const about = {
   operatingArea:
     'We currently operate in the Leeds area. Businesses outside a 20 mile radius may need to cover travel costs for in-person work. Get in touch for details.',
 };
-
-export const faqs = [
-  {
-    q: 'Do you only work with businesses in Leeds?',
-    a: 'No. The studio is based in Leeds and we meet local clients in person, but most projects run online, so we work with clients anywhere. For in-person work beyond 20 miles of Leeds, travel costs may apply.',
-  },
-  {
-    q: 'What do I need to get started?',
-    a: 'Just a short description of your business, who you want to reach and when you need the work. Send it through the form and we will come back with questions, timings and a clear quote.',
-  },
-  {
-    q: 'How many design options will I see?',
-    a: 'At the concept stage you see two or three directions. Once you pick one, we refine it across every format you need before anything is signed off.',
-  },
-  {
-    q: 'Which files do I get at the end?',
-    a: 'Print-ready files for your printer, web-ready files for screens and social, and a short brand guide so your colours, type and logo stay consistent.',
-  },
-  {
-    q: 'Can you combine several services into one project?',
-    a: 'Yes. Many clients start with a brand identity and roll it out to print, social and packaging. Doing it together keeps everything looking like one brand and is usually quicker.',
-  },
-];
 
 export const serviceOptions = [...services.map((s) => s.title), 'Aerial content', 'Not sure yet'];

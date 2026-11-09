@@ -35,21 +35,28 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open ? 'border-b border-ink/10 bg-paper/90 backdrop-blur-md' : 'border-b border-transparent bg-transparent'
+        open ? 'border-b border-ink/10 bg-paper' : scrolled ? 'border-b border-ink/10 bg-paper/90 backdrop-blur-md' : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <div className="container-site flex h-[72px] items-center justify-between gap-6">
-        <a href="#top" aria-label="Jsquaredlogistics home" className="shrink-0">
-          <Logo className="h-8 w-auto sm:h-9" />
-        </a>
-
-        <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${onDark ? 'text-white/80 hover:bg-white/10 hover:text-white' : 'text-ink-soft hover:bg-ink/5 hover:text-ink'}`}>
-              {l.label}
-            </a>
-          ))}
-        </nav>
+      <div className="container-site flex h-[72px] items-center justify-between gap-4">
+        {/* Logo and menu sit together on the left */}
+        <div className="flex min-w-0 items-center gap-6 xl:gap-10">
+          <a href="#top" aria-label="Jsquaredlogistics home" className="shrink-0">
+            <Logo className="h-8 w-auto sm:h-9" />
+          </a>
+          <span className={`hidden h-6 w-px lg:block ${onDark ? 'bg-white/20' : 'bg-ink/15'}`} aria-hidden="true"></span>
+          <nav aria-label="Main" className="hidden items-center gap-0.5 lg:flex xl:gap-1">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className={`whitespace-nowrap rounded-full px-3.5 py-2 text-[14px] font-medium transition-colors xl:px-4 ${onDark ? 'text-white/80 hover:bg-white/10 hover:text-white' : 'text-ink-soft hover:bg-ink/5 hover:text-ink'}`}
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+        </div>
 
         <div className="flex items-center gap-2">
           <a href="#contact" className="btn-primary hidden !px-5 !py-2.5 !text-[14px] sm:inline-flex">
