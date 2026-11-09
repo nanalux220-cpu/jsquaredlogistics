@@ -48,7 +48,7 @@ export default function Footer() {
               <iframe
                 title="Map showing the J Squared studio at 83 Roseville Road, Leeds"
                 src={contact.mapEmbed}
-                className="block h-[180px] w-full border-0 grayscale"
+                className="block h-[180px] w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
