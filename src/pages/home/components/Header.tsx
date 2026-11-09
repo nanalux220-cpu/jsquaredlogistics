@@ -39,12 +39,12 @@ export default function Header() {
       }`}
     >
       <div className="container-site flex h-[72px] items-center justify-between gap-4">
-        {/* Logo and menu sit together on the left */}
-        <div className="flex min-w-0 items-center gap-6 xl:gap-10">
-          <a href="#top" aria-label="Jsquaredlogistics home" className="shrink-0">
-            <Logo className="h-8 w-auto sm:h-9" />
-          </a>
-          <span className={`hidden h-6 w-px lg:block ${onDark ? 'bg-white/20' : 'bg-ink/15'}`} aria-hidden="true"></span>
+        <a href="#top" aria-label="Jsquaredlogistics home" className="shrink-0">
+          <Logo className="h-8 w-auto sm:h-9" />
+        </a>
+
+        {/* Menu sits on the right, next to the quote button */}
+        <div className="flex items-center gap-2 lg:gap-3">
           <nav aria-label="Main" className="hidden items-center gap-0.5 lg:flex xl:gap-1">
             {navLinks.map((l) => (
               <a
@@ -56,9 +56,6 @@ export default function Header() {
               </a>
             ))}
           </nav>
-        </div>
-
-        <div className="flex items-center gap-2">
           <a href="#contact" className="btn-primary hidden !px-5 !py-2.5 !text-[14px] sm:inline-flex">
             Get a quote <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>

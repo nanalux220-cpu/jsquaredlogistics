@@ -66,16 +66,16 @@ export default function HeroBackdrop() {
           <line x1="780" y1="430" x2="1380" y2="430" strokeDasharray="4 8" />
           <line x1="1080" y1="130" x2="1080" y2="730" strokeDasharray="4 8" />
         </g>
-        <circle cx="1080" cy="430" r="140" stroke="rgba(212,32,42,0.65)" strokeWidth="1.5" />
+        <circle cx="1080" cy="430" r="140" stroke="rgba(214,29,34,0.65)" strokeWidth="1.5" />
 
         {/* Pen-tool bezier curve with anchor points */}
-        <path className="cine-draw" d="M20 820 C 300 640, 520 900, 760 690 S 1010 760, 1160 560 S 1360 380, 1420 300" stroke="#d4202a" strokeWidth="2" />
+        <path className="cine-draw" d="M20 820 C 300 640, 520 900, 760 690 S 1010 760, 1160 560 S 1360 380, 1420 300" stroke="#d61d22" strokeWidth="2" />
         <g className="cine-fade" stroke="#fff" strokeWidth="1">
           <line x1="900" y1="520" x2="760" y2="690" strokeOpacity="0.35" />
           <line x1="1010" y1="760" x2="1160" y2="560" strokeOpacity="0.35" />
-          <rect x="754" y="684" width="12" height="12" fill="#15171a" />
-          <rect x="1154" y="554" width="12" height="12" fill="#d4202a" stroke="#d4202a" />
-          <rect x="1414" y="294" width="12" height="12" fill="#15171a" />
+          <rect x="754" y="684" width="12" height="12" fill="#25292f" />
+          <rect x="1154" y="554" width="12" height="12" fill="#d61d22" stroke="#d61d22" />
+          <rect x="1414" y="294" width="12" height="12" fill="#25292f" />
           <circle cx="900" cy="520" r="5" fill="#fff" />
           <circle cx="1010" cy="760" r="5" fill="#fff" />
         </g>
@@ -95,9 +95,9 @@ export default function HeroBackdrop() {
 
         {/* Colour swatches */}
         <g className="cine-fade" transform="translate(1250 760)">
-          <rect width="34" height="34" fill="#d4202a" />
-          <rect x="40" width="34" height="34" fill="#f7f5f1" />
-          <rect x="80" width="34" height="34" fill="#2a2d32" stroke="rgba(255,255,255,0.3)" />
+          <rect width="34" height="34" fill="#d61d22" />
+          <rect x="40" width="34" height="34" fill="#ffffff" />
+          <rect x="80" width="34" height="34" fill="#31363b" stroke="rgba(255,255,255,0.3)" />
           <rect x="120" width="34" height="34" fill="#ff7a3d" />
         </g>
       </svg>

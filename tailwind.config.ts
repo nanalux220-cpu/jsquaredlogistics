@@ -1,14 +1,14 @@
 import type { Config } from "tailwindcss";
 
-// Brand palette: warm paper, deep ink and the signature J Squared red.
+// Palette matched to jsquaredlogistics.co.uk: white page, deep charcoal bands, signature red.
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        paper: { DEFAULT: "#f7f5f1", deep: "#efebe4" },
-        ink: { DEFAULT: "#15171a", soft: "#2a2d32", muted: "#5d6168", faint: "#8b8f96" },
-        brand: { DEFAULT: "#d4202a", dark: "#b0161f", light: "#fde8e8" },
+        paper: { DEFAULT: "#ffffff", deep: "#f6f7f8" },
+        ink: { DEFAULT: "#25292f", soft: "#31363b", muted: "#525659", faint: "#6f7275" },
+        brand: { DEFAULT: "#d61d22", dark: "#bb0916", light: "#ffdeda" },
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', "system-ui", "-apple-system", "Segoe UI", "Arial", "sans-serif"],

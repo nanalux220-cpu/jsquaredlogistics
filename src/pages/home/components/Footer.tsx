@@ -4,7 +4,7 @@ import { SocialGlyph } from '@/components/icons';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#0e1012] pb-10 pt-16 text-white/70">
+    <footer className="border-t border-white/10 bg-[#1c2024] pb-10 pt-16 text-white/70">
       <div className="container-site">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_1fr_1.2fr]">
           <div>

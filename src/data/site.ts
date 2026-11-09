@@ -7,7 +7,6 @@ export const site = {
   logo: '/media/logo.png',
   heroImage: '/media/hero.jpg',
   heroVideo: '/media/hero.mp4',
-  aerialImage: '/media/leeds.jpg',
   studioImage: '/media/studio.jpg',
 };
 
@@ -32,7 +31,6 @@ export const socials = allSocials.filter((s) => s.href);
 export const navLinks = [
   { href: '#top', label: 'Home' },
   { href: '#services', label: 'Services' },
-  { href: '#aerial', label: 'Aerial' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -92,12 +90,6 @@ export const services: {
   },
 ];
 
-export const aerialPoints = [
-  { title: 'Aerial photography', text: 'Drone shots of sites, buildings and events that show the full picture.' },
-  { title: 'Designed, not just shot', text: 'Footage and stills finished with your brand colours, type and graphics.' },
-  { title: 'Ready to publish', text: 'Delivered sized for your website, social channels, brochures and pitches.' },
-];
-
 export const processSteps = [
   { n: '01', title: 'Brief', text: 'A short call or email about your brand, audience and deadline. We agree scope, budget and timing before anything is drawn.' },
   { n: '02', title: 'Concepts', text: 'Moodboards, sketches and type ideas. You see two or three directions and we talk through what each is trying to say.' },
@@ -122,4 +114,4 @@ export const about = {
     'We currently operate in the Leeds area. Businesses outside a 20 mile radius may need to cover travel costs for in-person work. Get in touch for details.',
 };
 
-export const serviceOptions = [...services.map((s) => s.title), 'Aerial content', 'Not sure yet'];
+export const serviceOptions = [...services.map((s) => s.title), 'Not sure yet'];
