@@ -1,29 +1,25 @@
-/** @type {import('tailwindcss').Config} */
-const scale = (role: string) => {
-  const steps = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
-  return Object.fromEntries(steps.map((s) => [s, `oklch(var(--${role}-${s}) / <alpha-value>)`]));
-};
+import type { Config } from "tailwindcss";
 
+// Brand palette: warm paper, deep ink and the signature J Squared red.
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        background: scale("background"),
-        accent: scale("accent"),
-        primary: scale("primary"),
-        secondary: scale("secondary"),
-        foreground: scale("foreground"),
+        paper: { DEFAULT: "#f7f5f1", deep: "#efebe4" },
+        ink: { DEFAULT: "#15171a", soft: "#2a2d32", muted: "#5d6168", faint: "#8b8f96" },
+        brand: { DEFAULT: "#d4202a", dark: "#b0161f", light: "#fde8e8" },
       },
       fontFamily: {
-        sans: ["var(--font-body)"],
-        body: ["var(--font-body)"],
-        heading: ["var(--font-heading)"],
-        display: ["var(--font-heading)"],
-        serif: ["var(--font-heading)"],
-        label: ["var(--font-label)"],
+        sans: ['"Plus Jakarta Sans"', "system-ui", "-apple-system", "Segoe UI", "Arial", "sans-serif"],
+        display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', "system-ui", "Arial", "sans-serif"],
       },
+      maxWidth: { site: "1280px" },
+      keyframes: {
+        marquee: { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
+      },
+      animation: { marquee: "marquee 40s linear infinite" },
     },
   },
   plugins: [],
-};
+} satisfies Config;
