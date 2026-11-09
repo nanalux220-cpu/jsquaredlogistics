@@ -30,12 +30,12 @@ export default function Header() {
     };
   }, [open]);
 
-  const onDark = !scrolled && !open; // transparent over the dark hero
+  const onDark = false; // header is always solid white
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        open ? 'border-b border-ink/10 bg-paper' : scrolled ? 'border-b border-ink/10 bg-paper/90 backdrop-blur-md' : 'border-b border-transparent bg-transparent'
+        scrolled && !open ? 'border-b border-ink/10 bg-white shadow-[0_6px_24px_-12px_rgba(37,41,47,0.25)]' : 'border-b border-ink/10 bg-white'
       }`}
     >
       <div className="container-site flex h-[72px] items-center justify-between gap-4">
