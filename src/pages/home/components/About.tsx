@@ -26,8 +26,8 @@ export default function About() {
 
         <div className="relative mt-16 overflow-hidden rounded-[28px] bg-ink" data-reveal>
           <img
-            src={site.leedsImage}
-            alt="Leeds rooftops at dusk"
+            src={site.studioImage}
+            alt=""
             loading="lazy"
             decoding="async"
             className="absolute inset-0 h-full w-full object-cover opacity-60"

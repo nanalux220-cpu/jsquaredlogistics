@@ -3,8 +3,10 @@ import { ArrowRight, CheckCircle2, Mail, MapPin, Phone } from 'lucide-react';
 import { contact, serviceOptions, socials } from '@/data/site';
 import { SocialGlyph } from '@/components/icons';
 
-// The form endpoint can be swapped in Vercel (VITE_FORM_ENDPOINT) without touching the code.
-const SUBMIT = import.meta.env.VITE_FORM_ENDPOINT || 'https://readdy.ai/api/form/dboq8tph8nnlcb0mjv90';
+// Enquiries are emailed to the studio through FormSubmit (formsubmit.co). The very first enquiry sends an
+// activation email to that address; click the link in it once and every enquiry after that arrives normally.
+// To use a different form service, set VITE_FORM_ENDPOINT in Vercel.
+const SUBMIT = import.meta.env.VITE_FORM_ENDPOINT || `https://formsubmit.co/ajax/${contact.email}`;
 const MAX = 500;
 
 export default function Contact() {
@@ -27,23 +29,24 @@ export default function Contact() {
     setStatus('sending');
     setFormError('');
     try {
-      const body = new URLSearchParams();
-      fd.forEach((v, k) => body.append(k, String(v)));
+      const payload: Record<string, string> = {
+        _subject: `New website enquiry from ${String(fd.get('name'))}`,
+        _template: 'table',
+        _captcha: 'false',
+      };
+      fd.forEach((v, k) => { payload[k] = String(v); });
       const response = await fetch(SUBMIT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
       });
-      const text = await response.text();
-      let parsed: { code?: string; message?: string; meta?: { message?: string } } | null = null;
-      try { parsed = JSON.parse(text); } catch { parsed = null; }
-      const serverMsg = String(parsed?.meta?.message || parsed?.message || '');
-      if (response.ok && (parsed?.code === 'OK' || !parsed) && !/spam/i.test(serverMsg)) {
+      const data: { success?: string | boolean; message?: string } = await response.json().catch(() => ({}));
+      if (response.ok && String(data.success) !== 'false') {
         setStatus('ok');
         form.reset();
         setCount(0);
       } else {
-        setFormError(serverMsg || `Something went wrong. Please try again, or email ${contact.email}.`);
+        setFormError(`Something went wrong sending your message. Please email ${contact.email} instead.`);
         setStatus('error');
       }
     } catch {
