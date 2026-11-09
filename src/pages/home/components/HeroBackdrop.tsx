@@ -16,7 +16,7 @@ export default function HeroBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
       {/* Footage with a slow push-in */}
-      <div className="cine-kenburns absolute inset-0">
+      <div className="cine-kenburns absolute inset-0 brightness-110 saturate-[1.15]">
         <img src={site.heroImage} alt="" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
         {videoOn && (
           <video
@@ -34,16 +34,15 @@ export default function HeroBackdrop() {
         )}
       </div>
 
-      {/* Colour grade: deep shadows, warm red highlights */}
-      {/* Even grade across the whole frame, so the footage shows edge to edge */}
-      <div className="absolute inset-0 bg-ink/45 mix-blend-multiply"></div>
-      <div className="absolute inset-0 bg-ink/35"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-ink/30"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/55"></div>
+      {/* Light colour grade: lets the footage show through while keeping the headline readable */}
+      <div className="absolute inset-0 bg-ink/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/20 to-transparent"></div>
+      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/80 to-transparent"></div>
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/50 to-transparent"></div>
 
       {/* Light leaks */}
-      <div className="cine-glow absolute -right-[10%] top-[10%] h-[70vmin] w-[70vmin] rounded-full bg-brand/35 blur-[110px]"></div>
-      <div className="cine-glow-slow absolute -left-[10%] top-[-15%] h-[60vmin] w-[60vmin] rounded-full bg-brand/25 blur-[120px]"></div>
+      <div className="cine-glow absolute -right-[10%] top-[10%] h-[70vmin] w-[70vmin] rounded-full bg-brand/25 blur-[110px]"></div>
+      <div className="cine-glow-slow absolute -left-[10%] top-[-15%] h-[60vmin] w-[60vmin] rounded-full bg-brand/15 blur-[120px]"></div>
       <div className="cine-glow-slow absolute bottom-[-20%] left-[30%] h-[55vmin] w-[55vmin] rounded-full bg-[#ff7a3d]/20 blur-[120px]"></div>
 
       {/* Designer layout grid */}
@@ -111,7 +110,7 @@ export default function HeroBackdrop() {
 
       {/* Film grain and vignette */}
       <div className="cine-grain absolute -inset-[50%] opacity-[0.09] mix-blend-overlay"></div>
-      <div className="absolute inset-0 shadow-[inset_0_0_220px_rgba(0,0,0,0.85)]"></div>
+      <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.4)]"></div>
     </div>
   );
 }
