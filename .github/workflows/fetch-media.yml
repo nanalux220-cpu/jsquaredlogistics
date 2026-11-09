@@ -1,0 +1,25 @@
+name: Fetch site media
+on:
+  push:
+    branches: ['claude/**']
+    paths: ['scripts/fetch-media.mjs', '.github/workflows/fetch-media.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/fetch-media.mjs
+      - name: Commit media
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/media
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Add self-hosted site images and video"
+          git push
